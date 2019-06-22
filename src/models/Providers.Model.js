@@ -15,6 +15,11 @@ export default class ProvidersModel {
         return this._queryExecutor.execute(stmt)
     }
 
+    readById(provider) {
+        let stmt = "SELECT * FROM fornecedores WHERE cod_forn="+provider.cod_forn+";"
+        return this._queryExecutor.execute(stmt)
+    }
+
     updateProvider(provider) {
         let stmt = "UPDATE fornecedores SET nome_fom='"+provider.nome_forn+"', tel_forn="+provider.tel_forn+" WHERE cod_forn="+provider.cod_forn+";"
         return this._queryExecutor.execute(stmt)

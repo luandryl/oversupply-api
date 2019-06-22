@@ -15,6 +15,11 @@ export default class SalesModel {
         return this._queryExecutor.execute(stmt)
     }
 
+    readById (sale) {
+        let stmt = "SELECT * FROM vendas WHERE cod_vend="+ sale.cod_vend +";"
+        return this._queryExecutor.execute(stmt)
+    }
+
     deleteSale (sale) {
         let stmt = "DELETE FROM vendas WHERE cod_vend="+ sale.cod_vend +";"
         return this._queryExecutor.execute(stmt)

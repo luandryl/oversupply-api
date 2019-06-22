@@ -16,6 +16,11 @@ export default class EmployeesModel {
         return this._queryExecutor.execute(stmt)
     }
 
+    readById(employee) {
+        let stmt = "SELECT * FROM funcionarios WHERE cod_func="+employee.cod_func+";"
+        return this._queryExecutor.execute(stmt)
+    }
+
     updateEmployee(employee) {
         let stmt = "UPDATE funcionarios SET nome_func='"+ employee.nome_func +"', tel_func="+ employee.tel_func +", email_func='"+ employee.email_func +"', senha_func='"+ employee.senha_func +"' WHERE cod_func="+ employee.cod_func +"";
         return this._queryExecutor.execute(stmt)

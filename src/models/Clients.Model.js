@@ -18,6 +18,11 @@ export default class ClientModel {
         return this._queryExecutor.execute(stmt)
     }
 
+    readById (client) {
+        let stmt = "SELECT * FROM clientes WHERE cod_cli="+ client.cod_cli +";"
+        return this._queryExecutor.execute(stmt)
+    }
+
     updateClient (client) {
         let stmt = "UPDATE clientes SET nome_cli='"+client.nome_cli+"', cpf_cli="+client.cpf_cli +", tel_cli="+client.tel_cli+", end_cli='"+client.end_cli+"' WHERE cod_cli="+client.cod_cli+";"
         return this._queryExecutor.execute(stmt)
