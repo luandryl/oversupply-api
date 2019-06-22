@@ -19,6 +19,11 @@ import ProductsModel from './src/models/Products.Model'
 Import Endpoints
   Ex : import student from './src/routes/Student.Router'
 */
+import clients from './src/routes/Client.Router'
+import providers from './src/routes/Providers.Router'
+import employees from './src/routes/Employees.Router'
+import sales from './src/routes/Sales.Router'
+
 let app = express()
 
 app.use(logger('dev'))
@@ -35,6 +40,11 @@ app.use(express.static(path.join(__dirname, 'public')))
   routes to student resource
   ex: app.use('/student', student)
 */
+app.use('/clients/', clients)
+app.use('/providers/', providers)
+app.use('/employees/', employees)
+app.use('/sales/', sales)
+
 // app.use('/', user)
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
