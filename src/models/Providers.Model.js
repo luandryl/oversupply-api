@@ -21,7 +21,7 @@ export default class ProvidersModel {
     }
 
     updateProvider(provider) {
-        let stmt = "UPDATE fornecedores SET nome_fom='"+provider.nome_forn+"', tel_forn="+provider.tel_forn+" WHERE cod_forn="+provider.cod_forn+";"
+        let stmt = "UPDATE fornecedores SET nome_forn='"+provider.nome_forn+"', tel_forn="+provider.tel_forn+" WHERE cod_forn="+provider.cod_forn+";"
         return this._queryExecutor.execute(stmt)
     }
 

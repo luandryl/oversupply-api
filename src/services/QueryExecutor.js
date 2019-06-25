@@ -20,9 +20,30 @@ export default class QueryExecutor {
                         resolve(r, null)
                     }
                 })
-            } finally {
-                this._conn.end()
+            } catch (e) {
+                console.log(e)
             }
         })
     }
+
+    query(sql) {
+        return new Promise((resolve, reject) => {
+            this._conn.query(sql, (err, rows) => {
+                if(err)
+                    return reject(err, null)
+                resolve(rows)
+            })
+        })
+    }
+
+    close() {
+        return new Promise((resolve, reject) => {
+            this._conn.end(err => {
+                if (err)
+                    return reject(err)
+                resolve()
+            })
+        })
+    }
+
 } 

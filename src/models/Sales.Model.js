@@ -6,7 +6,7 @@ export default class SalesModel {
     }
 
     createSale (sale) {
-        let stmt = "INSERT INTO vendas (produtos_cod_prod, clientes_cod_cli, funcionarios_cod_func, data_vend, forma_pgto) VALUES ("+ sale.produtos_cod_prod +", "+ sale.clientes_cod_cli +", "+ sale.fucionarios_cod_func +", "+ sale.data_venda + ", '"+ sale.forma_pgto + "');"
+        let stmt = "INSERT INTO vendas (produtos_cod_prod, clientes_cod_cli, funcionarios_cod_func, data_vend, forma_pgto) VALUES ("+ sale.produtos_cod_prod +", "+ sale.clientes_cod_cli +", "+ sale.funcionarios_cod_func +", '"+ sale.data_vend + "', '"+ sale.forma_pgto + "');"
         return this._queryExecutor.execute(stmt)
     }
 

@@ -9,7 +9,7 @@ export default class ClientModel {
         /*
             @todo -> way to inform if the process works or not;
         */
-        let stmt = "INSERT INTO clientes (nome_cli, cpf_cli, tel_cli, end_cli) VALUES ('"+ client.name_cli +"', "+ client.cpf_cli +", "+ client.tel_cli +", '"+ client.end_cli +"');"
+        let stmt = "INSERT INTO clientes (nome_cli, cpf_cli, tel_cli, end_cli) VALUES ('"+ client.nome_cli +"', "+ client.cpf_cli +", "+ client.tel_cli +", '"+ client.end_cli +"');"
         return this._queryExecutor.execute(stmt)
     }
 
