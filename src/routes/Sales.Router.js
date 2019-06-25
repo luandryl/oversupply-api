@@ -17,4 +17,8 @@ router.post('/', (req, res) => {
     sale.save(req, res)
 })
 
+router.delete('/:id', (req, res) => {
+    sale.delete(req, res)
+})
+
 export default router

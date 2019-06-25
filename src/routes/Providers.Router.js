@@ -13,4 +13,18 @@ router.get('/by-id/:id', (req, res) => {
     provider.getById(req, res)
 })
 
+router.post('/', (req, res) => {
+    provider.save(req, res)
+})
+
+router.put('/', (req, res) => {
+    provider.update(req, res)
+})
+
+router.delete('/', (req, res) => {
+    provider.delete(req, res)
+})
+
+
+
 export default router

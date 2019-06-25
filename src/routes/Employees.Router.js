@@ -12,4 +12,16 @@ router.get('/by-id/:id', (req, res) => {
     empControlller.getById(req, res)
 })
 
+router.post('/', (req, res) => {
+    empControlller.save(req, res)
+})
+
+router.put('/', (req, res) => {
+    empControlller.update(req, res)
+})
+
+router.delete('/', (req, res) => {
+    empControlller.delete(req, res)
+})
+
 export default router

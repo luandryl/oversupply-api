@@ -60,7 +60,10 @@ export default class SalesController {
     }
 
     delete(req, res) {
-        this._salesModel.deleteSale(req.body).then(data => {
+        let sale = {
+            cod_vend: req.params.id
+        }
+        this._salesModel.deleteSale(sale).then(data => {
             if (data.affectedRows != 0) {
                 res.send(data)
                 res.status(200)
