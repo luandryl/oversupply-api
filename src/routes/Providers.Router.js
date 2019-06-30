@@ -21,7 +21,7 @@ router.put('/', (req, res) => {
     provider.update(req, res)
 })
 
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
     provider.delete(req, res)
 })
 

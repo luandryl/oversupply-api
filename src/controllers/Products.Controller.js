@@ -80,7 +80,10 @@ export default class ProductsController {
     }
 
     delete(req, res) {
-        this._productsModel.delete(req.body).then(data => {
+      let product = {
+        cod_prod: req.params.id
+      }
+        this._productsModel.delete(product).then(data => {
             if (data) {
                 res.send(data)
                 res.status(200)

@@ -6,6 +6,7 @@ import path from 'path'
 import logger from 'morgan'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
+import cors from 'cors'
 
 import ClientModel from './src/models/Clients.Model'
 import ProvidersModel from './src/models/Providers.Model';
@@ -23,18 +24,17 @@ import clients from './src/routes/Client.Router'
 import providers from './src/routes/Providers.Router'
 import employees from './src/routes/Employees.Router'
 import sales from './src/routes/Sales.Router'
+import ofcHour from './src/routes/OfficeHour.Router'
+import products from './src/routes/Products.Router'
 
 let app = express()
 
 app.use(logger('dev'))
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
-
-/*
-  [Database conection] -> refactor
-*/
 
 /*
   routes to student resource
@@ -44,6 +44,8 @@ app.use('/clients/', clients)
 app.use('/providers/', providers)
 app.use('/employees/', employees)
 app.use('/sales/', sales)
+app.use('/office/', ofcHour)
+app.use('/products/', products)
 
 // app.use('/', user)
 // catch 404 and forward to error handler

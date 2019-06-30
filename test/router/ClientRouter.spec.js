@@ -15,6 +15,7 @@ describe('Test Client Routes', () => {
 
         axios.post(URL, client).then(data => {
             if (data.status == 200) {
+                console.log(data)
                 done()
             }
         }).catch(e => {
@@ -23,7 +24,7 @@ describe('Test Client Routes', () => {
     })
 
     it ('Shoud retrive all clients from database', (done) => {
-        axios.get(URL + '/all-clients').then(data => {
+        axios.get(URL + 'all-clients').then(data => {
             if (data) {
                 done()
             }
@@ -33,7 +34,7 @@ describe('Test Client Routes', () => {
     })
 
     it ('Shoud retrive clients by id from database', (done) => {
-        axios.get(URL + '/all-clients').then(data => {
+        axios.get(URL + 'all-clients').then(data => {
             if (data) {
                 axios.get(URL + '/by-id/' + data.data[0].cod_cli).then(client => {
                     if (client)
@@ -45,6 +46,10 @@ describe('Test Client Routes', () => {
         }).catch(e => {
             console.log(e)
         })
+    })
+
+    it('Should delete a client from database', (done) => {
+        
     })
 
 })

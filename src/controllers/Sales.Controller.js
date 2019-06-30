@@ -5,6 +5,23 @@ export default class SalesController {
         this._salesModel = new SalesModel()
     }
 
+    getSales (req, res) {
+        this._salesModel.readInfo().then(data => {
+            if (data) {
+                res.send(data)
+                res.status(200)
+            } else {
+                res.send({
+                    msg: 'Sales not found'
+                })
+                res.status(200)
+            }
+            res.end()
+        }).catch(e => {
+            console.log(e)
+        })
+    }
+
     getAll (req, res) {
         this._salesModel.readAllSales().then(data => {
             if (data) {

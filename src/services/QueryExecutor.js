@@ -6,10 +6,11 @@ import Database from '../database/Database'
 export default class QueryExecutor {
 
     constructor () {
-        this._conn = new Database()
-        this._conn.connect()
+        this._dataBase = new Database()
+        this._conn = this._dataBase.connect()
+        this._dataBase.handleDisconnect(this._conn)
     }
-    
+
     execute(stmt) {
         return new Promise ((resolve, reject) => {
             try {

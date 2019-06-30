@@ -6,7 +6,7 @@ describe('Providers test API', () => {
 
     it("Shoud create new Provider", (done) => {
         let newProvider = providersModel.createProvider({
-            nome_forn: 'SOUZA CRUZ',
+            nome_forn: 'DISTRIBUIDORA PARANA',
             tel_forn: 243423
         }).then((p) => {
             if (p)
@@ -49,7 +49,7 @@ describe('Providers test API', () => {
         providersArray.then(providers => {
             if(providers){
                 let updateProviderObj = providers[0]
-                updateProviderObj.nome_forn = 'MARLBORO CIGARR'
+                updateProviderObj.nome_forn = 'DISTRIBUIDORA SAO PAULO'
 
                 let updatedProvider = providersModel.updateProvider(updateProviderObj)
                 updatedProvider.then(up => {

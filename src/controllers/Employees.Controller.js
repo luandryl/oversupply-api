@@ -45,7 +45,7 @@ export default class EmployeesController {
     }
 
     save(req, res) {
-        this._emplooyeModel.save(req.body).then(data => {
+        this._emplooyeModel.createEmpoyee(req.body).then(data => {
             if (data.affectedRows != 0) {
                 res.send(data)
                 res.status(200)
@@ -77,7 +77,10 @@ export default class EmployeesController {
     }
 
     delete (req, res) { 
-        this._emplooyeModel.deleteEmployee(req.body).then(data => {
+        let employee = {
+            cod_func: req.params.id
+        }
+        this._emplooyeModel.deleteEmployee(employee).then(data => {
             if (data.affectedRows != 0) {
                 res.send(data)
                 res.status(200)

@@ -81,7 +81,11 @@ export default class ClientController {
   }
 
   deleteClient (req, res) {
-    this._clientModel.deleteClient(req.body).then(data => {
+    let client = {
+      cod_cli: req.params.id
+    }
+
+    this._clientModel.deleteClient(client).then(data => {
       if (data.affectedRows != 0) {
         res.send(data)
         res.status(200)

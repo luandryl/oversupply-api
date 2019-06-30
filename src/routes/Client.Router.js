@@ -20,7 +20,7 @@ router.put('/', (req, res) => {
     client.updateClient(req, res)
 })
 
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
     client.deleteClient(req, res)
 })
 

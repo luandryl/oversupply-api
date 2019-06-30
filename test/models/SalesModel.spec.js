@@ -7,19 +7,19 @@ import ProvidersModel from '../../src/models/Providers.Model'
 describe("Sales database API test", () => {
 
     it("Should create a new sale", (done) => {
-        /*
+
         let providerProduct = new ProvidersModel().createProvider({
-            nome_forn: 'SOUZA CRUZ',
+            nome_forn: 'DISTRIBUIDORA PARANA',
             tel_forn: 24342
         }).then(provider => {
             if (provider) {
                 let product = new ProductsModel().createProduct({
-                    nome_prod: 'Cigarro Height',
+                    nome_prod: 'Whey Protein',
                     bar_prod: 4345,
                     cod_fab: 13123,
-                    nome_fab: 'HEIGHT',
+                    nome_fab: 'Growth',
                     qnt_prod: 50,
-                    preco_prod: "5.00",
+                    preco_prod: "76.00",
                     fornecedores_cod_forn: provider.insertId
                 })
                 return product
@@ -59,10 +59,13 @@ describe("Sales database API test", () => {
         })
 
         salePromise.then(data => {
-            done()
+            if (data) {
+                done()
+            }
+        }).catch(e => {
+            console.log(e)
         })
-        */
-       done()
+
     })
 
     it ('Should retrive all data from database', (done) => {

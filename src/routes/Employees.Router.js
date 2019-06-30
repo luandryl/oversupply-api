@@ -20,7 +20,7 @@ router.put('/', (req, res) => {
     empControlller.update(req, res)
 })
 
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
     empControlller.delete(req, res)
 })
 

@@ -76,7 +76,11 @@ export default class ProvidersController {
     }
 
     delete(req, res) {
-        this._providersModel.deleteProvider(req.body).then(data => {
+        let provider = {
+            cod_forn: req.params.id 
+        }
+
+        this._providersModel.deleteProvider(provider).then(data => {
             if (data.affectedRows != 0) {
                 res.send(data)
                 res.status(200)

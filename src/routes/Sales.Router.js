@@ -9,6 +9,10 @@ router.get('/all/', (req, res) => {
     sale.getAll(req, res)
 })
 
+router.get('/info/', (req, res) => {
+    sale.getSales(req, res)
+})
+
 router.get('/by-id/:id', (req, res) => {
     sale.getById(req, res)
 })
